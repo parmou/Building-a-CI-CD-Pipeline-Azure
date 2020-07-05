@@ -1,6 +1,6 @@
+import logging
 from flask import Flask, request, jsonify
 from flask.logging import create_logger
-import logging
 
 import pandas as pd
 from sklearn.externals import joblib
@@ -13,14 +13,14 @@ LOG.setLevel(logging.INFO)
 def scale(payload):
     """Scales Payload"""
 
-    LOG.info("Scaling Payload:" + payload)
+    LOG.info("Scaling Payload: %s", payload)
     scaler = StandardScaler().fit(payload)
     scaled_adhoc_predict = scaler.transform(payload)
     return scaled_adhoc_predict
 
 @app.route("/")
 def home():
-    html = f"<h3>Sklearn Prediction Home</h3>"
+    html = "<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
@@ -56,9 +56,9 @@ def predict():
 
 
     json_payload = request.json
-    LOG.info("JSON payload: " + json_payload)
+    LOG.info("JSON payload: %s", json_payload)
     inference_payload = pd.DataFrame(json_payload)
-    LOG.info("inference payload DataFrame: "+inference_payload)
+    LOG.info("inference payload DataFrame: %s", inference_payload)
     scaled_payload = scale(inference_payload)
     prediction = list(clf.predict(scaled_payload))
     return jsonify({'prediction': prediction})
