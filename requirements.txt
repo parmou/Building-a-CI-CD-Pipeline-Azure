@@ -1,3 +1,4 @@
+--find-links wheelhouse
 pylint
 pytest
 Flask==1.0.2
