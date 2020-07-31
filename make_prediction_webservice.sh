@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PORT=10051
+PORT=8000
 echo "Port: $PORT"
 
 # POST method predict
@@ -25,4 +25,4 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST https://housingprediction.azurewebsites.net:$PORT/predict
+     -X POST https://housingprediction.azurewebsites.net/predict
