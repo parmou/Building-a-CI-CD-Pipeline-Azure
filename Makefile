@@ -11,7 +11,7 @@ test:
 
 
 lint:
-	hadolint Dockerfile 
+	#hadolint Dockerfile 
 	python3 -m pylint --disable=R,C,W1203 app.py
 	#pylint --disable=R,C,W1203 app.py
 
