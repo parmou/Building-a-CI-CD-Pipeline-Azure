@@ -1,3 +1,5 @@
+![Python application test with Github Actions](https://github.com/parveshmourya/Building-a-CI-CD-Pipeline-Azure/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
+
 # Overview
 In this project, we will build a Github repository from scratch and create a scaffolding that will assist us in performing both Continuous Integration and Continuous Delivery. We first create a github repository and make use of Github actions to perform the lint, test and build of the code. Then we factor in our CD pipe, making use of Azure pipelines and Azure App Service.
 
