@@ -1,40 +1,57 @@
 # Overview
-
-<TODO: complete this with an overview of your project>
+In this project, we will build a Github repository from scratch and create a scaffolding that will assist us in performing both Continuous Integration and Continuous Delivery. We first create a github repository and make use of Github actions to perform the lint, test and build of the code. Then we factor in our CD pipe, making use of Azure pipelines and Azure App Service.
 
 ## Project Plan
-<TODO: Project Plan
+Please find the link to the project plan that was used during the deployment of the project
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+* Trello Board: https://trello.com/b/wi5zmfzW/udaproject
+* Project Plan: https://docs.google.com/spreadsheets/d/1R4tia34BtsjiM43NwJ_uCbalfJfBfPXk7JtWwbgG5xU/edit?usp=sharing
+
+## Architecture
+
+We make the use of make tool to create tool to run lint, test and install from the command line. Then, we make use of Github actions to enable continous integration reacting to every change that is pushed to master branch. Also, we integrate Azure pipeline with Github repo. Whenever we push a change to github repo, Azure deploy pipeline is triggered which deploys the code to the Azure app service.
+
+Architecture High level view: screenshots/AzureCI_CD.png
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+* Run the project on the local system using the below command. Make sure docker is installed and running on the system.
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+`bash run_docker.sh`
 
-
-* Project running inside a Docker container
+screenshot: screenshots/projectincontainer.png
 
 * Project running on Azure App Service
 
+screenshot: screenshots/projectinazureapp.png
+
 * Project cloned into Azure Cloud Shell
+
+screenshot: screenshots/projectinazureshell.png
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
+screenshot: screenshots/makeall.png
+
 * Output of a test run
+
+screenshot: screenshots/testoutput.png
 
 * Successful run of the project in Azure Pipelines
 
+screenshot: screenshots/azruepipeline.png
+
 * Running Azure App Service
+screenshot: screenshots/projectinazureapp.png
 
 * Successful prediction from deployed flask app in Azure Cloud Shell> 
+screenshot: screenshots/predictionfromwebapp.png
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+* The test cases can be added and made of more quality
+* The webhook implmentation so that the Azure pipeline is fired only when Github action build is passed
+
 
 ## Demo 
 
